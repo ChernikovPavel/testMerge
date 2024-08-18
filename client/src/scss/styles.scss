@@ -1,0 +1,40 @@
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+
+
+$primary: #404046;
+$btn-hover-bg-shade-amount: 100%;
+
+
+$theme-colors: map-merge(
+  $theme-colors,
+  (
+    'primary': $primary,
+
+    )
+);
+
+
+.form-control:focus {
+  border-color: #1d2838;
+  outline: 0;
+  // box-shadow: 0 0 0 0.25rem rgba(35, 36, 37, 0.25);
+  box-shadow: 20px 20px 15px 2rem rgba(13, 110, 253, 0.25);
+};
+
+.w-10px {
+  width: 10px;
+  :hover{
+    width: 100px;
+  }
+}
+
+.form-control:active {
+  border-color: #1d2838;
+  outline: 0;
+  // box-shadow: 0 0 0 0.25rem rgba(35, 36, 37, 0.25);
+  box-shadow: 20px 20px 15px 2rem rgba(13, 110, 253, 0.25);
+};
+
+
+@import 'bootstrap/scss/bootstrap';
