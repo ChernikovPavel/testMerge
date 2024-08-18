@@ -6,11 +6,14 @@ import RegPage from "./components/pages/RegPage";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import LogPage from "./components/pages/LogPage";
 
-function App() {
+function App() {  
+  const [hookedUser, hookUser] = useState({id: 0, login: 'guest', password: null})
+
+
   const routes = [
     {
       path: '/',
-      element: <Layout/>,
+      element: <Layout hookedUser={hookedUser}/>,
       children: [
         {
           path: "/",

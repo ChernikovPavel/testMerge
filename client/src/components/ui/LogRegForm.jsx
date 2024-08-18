@@ -9,7 +9,7 @@ export default function LogRegForm({ type }) {
       </label>
       <input
         type="text"
-        className="form-control mb-1"
+        className="form-control mb-1 "
         id="inputLogin"
         aria-describedby="emailHelp"
         autoComplete="off"
@@ -20,11 +20,16 @@ export default function LogRegForm({ type }) {
       </label>
       <input
         type="text"
-        className="form-control mb-3"
+        className="form-control mb-3 "
         id="inputPassword"
         aria-describedby="emailHelp"
         autoComplete="off"
       />
+      {type === 'log' ? (
+        <button className="btn btn-dark me-3">Войти</button>
+      ) : (
+        <button className="btn btn-dark me-3">Зарегистрироваться</button>
+      )}
       <Link to="/" className="btn btn-dark">
         Обратно на главную
       </Link>

@@ -3,7 +3,8 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     static associate({Round, Deck}) {
-      this.belongsToMany(Deck, { through: {model: Round, as: 'UserToRound'}, foreignKey: 'userId', as:'UserToDeck'});
+      this.belongsToMany(Deck, { through: {model: Round}, foreignKey: 'userId', as:'UserToDeck'});
+      this.hasMany(Round, {foreignKey: 'userId', as: 'UserToRound'})
     }
   }
   User.init({
