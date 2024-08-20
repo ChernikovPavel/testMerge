@@ -1,32 +1,44 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
-export default function LogRegForm({ type }) {
+export default function LogRegForm({ type, hookUser }) {
+  // const [hookedInput, hookInput] = useState({ login: '', password: '' });
+  // const inputHandler = (event) => {
+  //   return hookInput((before) => ({
+  //     ...before,
+  //     [event.target.id]: event.target.value,
+  //   }));
+  // };
+  const inputRef = useRef({login: '', password: ''})
+
+console.log(inputRef)
   return (
     <div>
-      <label htmlFor="inputLogin" className="form-label mb-1">
+      <label htmlFor="login" className="form-label mb-1">
         Логин
       </label>
       <input
         type="text"
         className="form-control mb-1 "
-        id="inputLogin"
+        id="login"
         aria-describedby="emailHelp"
         autoComplete="off"
+        ref={inputRef.login}
       />
 
-      <label htmlFor="inputLogin" className="form-label mb-1">
+      <label htmlFor="password" className="form-label mb-1">
         Пароль
       </label>
       <input
         type="text"
         className="form-control mb-3 "
-        id="inputPassword"
+        id="password"
         aria-describedby="emailHelp"
         autoComplete="off"
+        ref={inputRef.password}
       />
       {type === 'log' ? (
-        <button className="btn btn-dark me-3">Войти</button>
+        <button className="btn btn-dark me-3" onClick={() => {}}>Войти</button>
       ) : (
         <button className="btn btn-dark me-3">Зарегистрироваться</button>
       )}
